@@ -5,45 +5,34 @@ body {
   overflow-x: hidden;
 }
 
-/* soft background */
 .bg {
   position: fixed;
   width: 100%;
   height: 100%;
   background: radial-gradient(circle, #f4f8f2, #dbe7d7);
-  animation: glow 6s infinite;
 }
 
-@keyframes glow {
-  50% { filter: brightness(1.08); }
-}
-
-/* layout */
 .container {
-  position: relative;
   text-align: center;
   padding: 20px;
-  margin-top: 15vh;
+  margin-top: 12vh;
 }
 
-.title {
-  color: #3b4b3b;
-}
-
-/* card */
-.card {
+.card, .menu, .letter {
   background: #f4f8f2;
-  display: inline-block;
   padding: 20px;
+  margin: 20px auto;
   border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 input {
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #bbb;
-  font-family: inherit;
+  border: 1px solid #aaa;
+  width: 80%;
 }
 
 button {
@@ -57,50 +46,14 @@ button {
   font-family: inherit;
 }
 
-/* menu */
-.menu {
-  display: none;
-  margin-top: 20px;
-}
+.menu { display: none; }
 
-.menu button {
-  display: block;
-  margin: 8px auto;
-  width: 200px;
-}
+.letter { display: none; min-height: 200px; }
 
-/* secret */
-.secret {
-  opacity: 0.3;
-}
-
-/* letter */
-.letter {
-  display: none;
-  margin: 20px auto;
-  background: #f4f8f2;
-  padding: 25px;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 350px;
-  min-height: 200px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-  font-size: 18px;
-  line-height: 1.6;
-  animation: fade 0.5s ease;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* hearts */
 .hearts span {
   position: absolute;
   bottom: -50px;
-  font-size: 20px;
-  animation: float 7s infinite linear;
+  animation: float 8s linear infinite;
 }
 
 .hearts span:nth-child(1){ left: 10%; }
