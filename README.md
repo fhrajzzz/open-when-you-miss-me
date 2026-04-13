@@ -42,7 +42,7 @@ that you are never alone.
 ---
 
 ## 📎 live site
-👉 *(paste your GitHub Pages link here)*  
+👉 https://fhrajzzz.github.io/open-when-you-miss-me/  
 
 ---
 
