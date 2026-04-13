@@ -1,42 +1,30 @@
 body {
   margin: 0;
-  font-family: "Arial";
+  font-family: Arial;
   background: #e8efe6;
   overflow: hidden;
 }
 
-/* animated soft background */
 .bg {
   position: absolute;
   width: 100%;
   height: 100%;
   background: radial-gradient(circle, #f4f8f2, #dbe7d7);
-  animation: glow 6s infinite ease-in-out;
+  animation: glow 6s infinite;
 }
 
 @keyframes glow {
-  0% { filter: brightness(1); }
   50% { filter: brightness(1.08); }
-  100% { filter: brightness(1); }
 }
 
-/* container */
 .container {
-  position: relative;
   text-align: center;
-  top: 18%;
-  padding: 20px;
+  position: relative;
+  top: 12%;
 }
 
-/* title animation */
 .title {
   color: #3b4b3b;
-  animation: fadeDown 1s ease;
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* card */
@@ -45,30 +33,22 @@ body {
   display: inline-block;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  animation: pop 1s ease;
 }
 
-input {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #bbb;
-  outline: none;
+/* menu */
+.menu {
+  display: none;
+  margin-top: 20px;
 }
 
-button {
-  margin-top: 10px;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 10px;
-  background: #5f7a5f;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+.menu button {
+  display: block;
+  margin: 8px auto;
 }
 
-button:hover {
-  transform: scale(1.05);
+/* secret button */
+.secret-btn {
+  opacity: 0.3;
 }
 
 /* letter */
@@ -77,33 +57,26 @@ button:hover {
   margin: 20px auto;
   background: #f4f8f2;
   padding: 25px;
-  border-radius: 25px;
+  border-radius: 20px;
   width: 280px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-  animation: pop 0.6s ease;
 }
 
-@keyframes pop {
-  from { transform: scale(0.5); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+/* buttons */
+button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  background: #5f7a5f;
+  color: white;
 }
 
-/* floating hearts */
+/* hearts */
 .hearts span {
   position: absolute;
   bottom: -50px;
-  font-size: 20px;
-  animation: floatUp 7s linear infinite;
+  animation: float 7s infinite linear;
 }
 
-.hearts span:nth-child(1){ left: 10%; }
-.hearts span:nth-child(2){ left: 30%; animation-delay: 2s; }
-.hearts span:nth-child(3){ left: 50%; animation-delay: 1s; }
-.hearts span:nth-child(4){ left: 70%; animation-delay: 3s; }
-.hearts span:nth-child(5){ left: 90%; animation-delay: 4s; }
-
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateY(-900px); opacity: 0; }
+@keyframes float {
+  to { transform: translateY(-800px); opacity: 0; }
 }
