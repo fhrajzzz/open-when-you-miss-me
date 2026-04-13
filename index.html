@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Open When 💌</title>
+
+  <!-- handwritten font -->
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,29 +26,29 @@
     <button onclick="unlock()">unlock</button>
   </div>
 
-  <!-- letters menu -->
+  <!-- menu -->
   <div class="menu" id="menu">
     <h2>choose a letter ✿</h2>
+
     <button onclick="openLetter('miss')">💌 miss me</button>
     <button onclick="openLetter('sad')">💔 sad</button>
     <button onclick="openLetter('tired')">😴 tired</button>
     <button onclick="openLetter('happy')">🎉 happy</button>
-    <button onclick="openLetter('proud')">🌿 need reassurance</button>
-    <button onclick="openLetter('alone')">🌙 feel alone</button>
+    <button onclick="openLetter('proud')">🌿 proud</button>
+    <button onclick="openLetter('alone')">🌙 alone</button>
 
-    <!-- hidden trigger -->
-    <button class="secret-btn" onclick="openSecret()">???</button>
+    <button class="secret" onclick="openSecret()">???</button>
   </div>
 
   <!-- letter -->
   <div class="letter" id="letter">
     <p id="text"></p>
-    <button onclick="closeLetter()">back</button>
+    <button onclick="back()">back</button>
   </div>
 
 </div>
 
-<!-- floating hearts -->
+<!-- hearts -->
 <div class="hearts">
   <span>💚</span><span>🤍</span><span>💚</span><span>🤍</span><span>💚</span>
 </div>
