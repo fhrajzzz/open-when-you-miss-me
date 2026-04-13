@@ -1,82 +1,93 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #e8efe6;
-  overflow: hidden;
+function unlock() {
+  let pass = document.getElementById("pass").value;
+
+  if (pass === "missyou") {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("menu").style.display = "block";
+  } else {
+    alert("wrong password 💔");
+  }
 }
 
-.bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, #f4f8f2, #dbe7d7);
-  animation: glow 6s infinite;
+/* typing animation */
+function typeWriter(text, i = 0) {
+  const el = document.getElementById("text");
+  el.innerHTML = "";
+
+  function typing() {
+    if (i < text.length) {
+      el.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, 20);
+    }
+  }
+  typing();
 }
 
-@keyframes glow {
-  50% { filter: brightness(1.08); }
+/* letters */
+function openLetter(type) {
+
+  const messages = {
+    miss: `hey you 💌
+
+if you miss me, i miss you too 🤍
+
+please take care of yourself.
+drink water, eat well, rest 🌿
+
+“I have loved you with an everlasting love.” — Jeremiah 31:3`,
+
+    sad: `hey… it’s okay 💔
+
+you don’t have to be strong all the time.
+
+“The Lord is close to the brokenhearted.” — Psalm 34:18`,
+
+    tired: `you’ve been trying so hard 😴
+
+please rest.
+you deserve peace.
+
+“Come to me and I will give you rest.” — Matthew 11:28`,
+
+    happy: `i’m so happy you’re happy 🎉
+
+keep smiling 💚
+
+“This is the day the Lord has made.” — Psalm 118:24`,
+
+    proud: `i’m proud of you 🌿
+
+even the small steps matter.
+
+“I can do all things through Christ.” — Philippians 4:13`,
+
+    alone: `you are not alone 🌙
+
+ever.
+
+“Never will I leave you.” — Hebrews 13:5`
+  };
+
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("letter").style.display = "block";
+
+  typeWriter(messages[type]);
 }
 
-.container {
-  text-align: center;
-  position: relative;
-  top: 12%;
+function openSecret() {
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("letter").style.display = "block";
+
+  typeWriter(`you found the hidden letter 💌
+
+you are deeply cared for.
+please never forget that 💚
+
+“Above all else, guard your heart.” — Proverbs 4:23`);
 }
 
-.title {
-  color: #3b4b3b;
-}
-
-/* card */
-.card {
-  background: #f4f8f2;
-  display: inline-block;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-/* menu */
-.menu {
-  display: none;
-  margin-top: 20px;
-}
-
-.menu button {
-  display: block;
-  margin: 8px auto;
-}
-
-/* secret button */
-.secret-btn {
-  opacity: 0.3;
-}
-
-/* letter */
-.letter {
-  display: none;
-  margin: 20px auto;
-  background: #f4f8f2;
-  padding: 25px;
-  border-radius: 20px;
-  width: 280px;
-}
-
-/* buttons */
-button {
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: none;
-  background: #5f7a5f;
-  color: white;
-}
-
-/* hearts */
-.hearts span {
-  position: absolute;
-  bottom: -50px;
-  animation: float 7s infinite linear;
-}
-
-@keyframes float {
-  to { transform: translateY(-800px); opacity: 0; }
+function back() {
+  document.getElementById("letter").style.display = "none";
+  document.getElementById("menu").style.display = "block";
 }
