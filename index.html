@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Open When You Miss Me</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open When 💌</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,41 +13,42 @@
 
 <div class="container">
 
-  <h1 h1 class="title">open when you miss me 💌</h1>
+  <h1 class="title">open when you need me 💌</h1>
 
-  <div class="card">
-    <p class="label">enter password</p>
+  <!-- password -->
+  <div class="card" id="lock">
+    <p>enter password</p>
     <input type="password" id="pass" placeholder="••••••">
     <button onclick="unlock()">unlock</button>
   </div>
 
+  <!-- letters menu -->
+  <div class="menu" id="menu">
+    <h2>choose a letter ✿</h2>
+    <button onclick="openLetter('miss')">💌 miss me</button>
+    <button onclick="openLetter('sad')">💔 sad</button>
+    <button onclick="openLetter('tired')">😴 tired</button>
+    <button onclick="openLetter('happy')">🎉 happy</button>
+    <button onclick="openLetter('proud')">🌿 need reassurance</button>
+    <button onclick="openLetter('alone')">🌙 feel alone</button>
+
+    <!-- hidden trigger -->
+    <button class="secret-btn" onclick="openSecret()">???</button>
+  </div>
+
+  <!-- letter -->
   <div class="letter" id="letter">
-    <h2>hey you ✿</h2>
-    <p>
-      if you’re reading this, maybe you miss me a little 🌿<br><br>
-
-      i just want to remind you:<br>
-      you are doing better than you think.<br>
-      rest when you need to. breathe. take it slow.<br><br>
-
-      i’ll always be cheering for you, even from afar 💚
-    </p>
-
-    <button onclick="closeLetter()">close</button>
+    <p id="text"></p>
+    <button onclick="closeLetter()">back</button>
   </div>
 
 </div>
 
 <!-- floating hearts -->
 <div class="hearts">
-  <span>💚</span>
-  <span>🤍</span>
-  <span>💚</span>
-  <span>🤍</span>
-  <span>💚</span>
+  <span>💚</span><span>🤍</span><span>💚</span><span>🤍</span><span>💚</span>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-</body>
